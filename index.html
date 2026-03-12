@@ -291,7 +291,6 @@
       font-size: 1rem;
     }
 
-    /* HERO */
     #hero {
       min-height: 100vh;
       display: flex;
@@ -568,7 +567,6 @@
       color: var(--text);
     }
 
-    /* ABOUT */
     .about-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
@@ -623,7 +621,6 @@
       text-align: right;
     }
 
-    /* SERVICES */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -683,7 +680,6 @@
       color: var(--text);
     }
 
-    /* SKILLS */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -708,7 +704,6 @@
       gap: 10px;
     }
 
-    /* PROJECTS */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -774,7 +769,6 @@
       background: rgba(255,255,255,0.02);
     }
 
-    /* SUMMARY */
     .summary-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -802,7 +796,6 @@
       line-height: 1.6;
     }
 
-    /* CONTACT */
     .contact-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -817,38 +810,6 @@
       color: var(--muted);
       line-height: 1.9;
       margin-bottom: 18px;
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .contact-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      align-items: center;
-      padding: 14px 16px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: rgba(255,255,255,0.02);
-      flex-wrap: wrap;
-    }
-
-    .contact-item strong {
-      font-family: "Share Tech Mono", monospace;
-      color: var(--cyan);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .contact-item span,
-    .contact-item a {
-      color: var(--text);
-      word-break: break-word;
     }
 
     footer {
@@ -874,7 +835,6 @@
       font-size: 0.88rem;
     }
 
-    /* REVEAL */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -886,7 +846,6 @@
       transform: translateY(0);
     }
 
-    /* RESPONSIVE */
     @media (max-width: 1100px) {
       .hero-grid,
       .about-grid,
@@ -995,10 +954,11 @@
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#hero" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#services" class="nav-link">Core Services</a></li>
+        <li><a href="#skills" class="nav-link">Tech Capability</a></li>
+        <li><a href="#projects" class="nav-link">Featured Porto</a></li>
+        <li><a href="#summary" class="nav-link">Summary</a></li>
+        <li><a href="#about" class="nav-link">Profile Overview</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
 
@@ -1096,72 +1056,7 @@
     </div>
   </section>
 
-  <section id="about" class="section-pad">
-    <div class="container">
-      <div class="section-head reveal">
-        <div>
-          <div class="section-kicker">Profile Overview</div>
-          <h2 class="section-title">System <em>Introduction</em></h2>
-        </div>
-        <p class="section-desc">
-          Experienced in developing HR systems, warehouse management systems, social platforms,
-          and enterprise tools used in real operational environments.
-        </p>
-      </div>
-
-      <div class="about-grid">
-        <div class="card about-card about-copy reveal">
-          <p>
-            Hi — I'm Bernando Delano, a Full Stack Software Engineer with experience in building scalable
-            web and mobile applications, system integrations, and enterprise management systems.
-          </p>
-          <p>
-            I build complete solutions from backend architecture, database design, APIs, and authentication
-            systems to modern frontend interfaces and mobile applications.
-          </p>
-          <p>
-            My experience covers enterprise platforms, internal business tools, social platforms,
-            real-time systems, and operational software designed for real-world usage.
-          </p>
-
-          <div class="quote">
-            "Experienced in developing HR systems, warehouse management systems, social platforms,
-            and enterprise tools used in real operational environments."
-          </div>
-        </div>
-
-        <div class="card about-card reveal">
-          <div class="info-list">
-            <div class="info-item">
-              <strong>Primary Role</strong>
-              <span>Full Stack Software Engineer</span>
-            </div>
-            <div class="info-item">
-              <strong>Education</strong>
-              <span>Bachelor Degree in Economics<br />Sam Ratulangi University</span>
-            </div>
-            <div class="info-item">
-              <strong>Frontend</strong>
-              <span>React.js, Vue.js, Flutter, TailwindCSS</span>
-            </div>
-            <div class="info-item">
-              <strong>Backend</strong>
-              <span>Golang, Node.js, PHP, JWT Authentication</span>
-            </div>
-            <div class="info-item">
-              <strong>Database</strong>
-              <span>PostgreSQL, MySQL, SQL Server</span>
-            </div>
-            <div class="info-item">
-              <strong>Tools</strong>
-              <span>Git, GitHub, GitLab, Docker, Linux, VS Code, Postman</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- CORE SERVICES -->
   <section id="services" class="section-pad">
     <div class="container">
       <div class="section-head reveal">
@@ -1224,6 +1119,7 @@
     </div>
   </section>
 
+  <!-- TECH CAPABILITY -->
   <section id="skills" class="section-pad">
     <div class="container">
       <div class="section-head reveal">
@@ -1316,6 +1212,7 @@
     </div>
   </section>
 
+  <!-- FEATURED PORTFOLIO -->
   <section id="projects" class="section-pad">
     <div class="container">
       <div class="section-head reveal">
@@ -1462,7 +1359,8 @@
     </div>
   </section>
 
-  <section class="section-pad">
+  <!-- PORTFOLIO SUMMARY -->
+  <section id="summary" class="section-pad">
     <div class="container">
       <div class="section-head reveal">
         <div>
@@ -1496,6 +1394,74 @@
     </div>
   </section>
 
+  <!-- PROFILE OVERVIEW -->
+  <section id="about" class="section-pad">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Profile Overview</div>
+          <h2 class="section-title">System <em>Introduction</em></h2>
+        </div>
+        <p class="section-desc">
+          Experienced in developing HR systems, warehouse management systems, social platforms,
+          and enterprise tools used in real operational environments.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="card about-card about-copy reveal">
+          <p>
+            Hi — I'm Bernando Delano, a Full Stack Software Engineer with experience in building scalable
+            web and mobile applications, system integrations, and enterprise management systems.
+          </p>
+          <p>
+            I build complete solutions from backend architecture, database design, APIs, and authentication
+            systems to modern frontend interfaces and mobile applications.
+          </p>
+          <p>
+            My experience covers enterprise platforms, internal business tools, social platforms,
+            real-time systems, and operational software designed for real-world usage.
+          </p>
+
+          <div class="quote">
+            "Experienced in developing HR systems, warehouse management systems, social platforms,
+            and enterprise tools used in real operational environments."
+          </div>
+        </div>
+
+        <div class="card about-card reveal">
+          <div class="info-list">
+            <div class="info-item">
+              <strong>Primary Role</strong>
+              <span>Full Stack Software Engineer</span>
+            </div>
+            <div class="info-item">
+              <strong>Education</strong>
+              <span>Bachelor Degree in Economics<br />Sam Ratulangi University</span>
+            </div>
+            <div class="info-item">
+              <strong>Frontend</strong>
+              <span>React.js, Vue.js, Flutter, TailwindCSS</span>
+            </div>
+            <div class="info-item">
+              <strong>Backend</strong>
+              <span>Golang, Node.js, PHP, JWT Authentication</span>
+            </div>
+            <div class="info-item">
+              <strong>Database</strong>
+              <span>PostgreSQL, MySQL, SQL Server</span>
+            </div>
+            <div class="info-item">
+              <strong>Tools</strong>
+              <span>Git, GitHub, GitLab, Docker, Linux, VS Code, Postman</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
   <section id="contact" class="section-pad">
     <div class="container">
       <div class="section-head reveal">
@@ -1519,8 +1485,6 @@
             Open for software engineering projects, enterprise application development,
             internal systems, dashboards, management systems, and mobile app solutions.
           </p>
-
-          
         </div>
 
         <div class="contact-card reveal">
@@ -1552,7 +1516,6 @@
   </footer>
 
   <script>
-    // mobile nav
     const navBurger = document.getElementById("navBurger");
     const navLinks = document.getElementById("navLinks");
 
@@ -1566,7 +1529,6 @@
       });
     });
 
-    // custom cursor
     const cur = document.getElementById("cur");
     const ring = document.getElementById("cur-ring");
 
@@ -1597,7 +1559,6 @@
       });
     });
 
-    // reveal on scroll
     const reveals = document.querySelectorAll(".reveal");
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -1607,7 +1568,6 @@
 
     reveals.forEach((el) => revealObserver.observe(el));
 
-    // active nav section
     const sections = document.querySelectorAll("section[id]");
     const navA = document.querySelectorAll(".nav-link");
 
@@ -1622,7 +1582,6 @@
 
     sections.forEach((section) => sectionObserver.observe(section));
 
-    // matrix background
     const matrixCanvas = document.getElementById("matrix-canvas");
     const mtx = matrixCanvas.getContext("2d");
 
@@ -1654,7 +1613,6 @@
       }
     }
 
-    // grid background
     const gridCanvas = document.getElementById("grid-canvas");
     const gtx = gridCanvas.getContext("2d");
 
@@ -1700,4 +1658,3 @@
   </script>
 </body>
 </html>
-
