@@ -167,16 +167,36 @@
     }
 
     .nav-logo {
-      font-family: "Orbitron", monospace;
-      font-size: 0.92rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      color: var(--cyan);
-      text-shadow:
-        0 0 10px rgba(89, 243, 255, 0.45),
-        0 0 18px rgba(109, 168, 255, 0.25);
-      white-space: nowrap;
-    }
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Orbitron", monospace;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--cyan);
+  text-shadow:
+    0 0 10px rgba(89, 243, 255, 0.45),
+    0 0 18px rgba(109, 168, 255, 0.25);
+  white-space: nowrap;
+}
+    .nav-logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+
+  box-shadow:
+    0 0 10px rgba(89,243,255,0.35),
+    0 0 20px rgba(217,109,255,0.25);
+
+  border: 1px solid rgba(109,168,255,0.2);
+}
+    .logo-text span {
+  color: var(--magenta);
+  text-shadow: 0 0 16px rgba(217,109,255,0.5);
+}
 
     .nav-logo span {
       color: var(--magenta);
@@ -991,7 +1011,10 @@
 
   <nav>
     <div class="nav-wrap">
-      <a href="#hero" class="nav-logo">DN <span>//</span> DEV</a>
+      <a href="#hero" class="nav-logo">
+  <img src="images/logo.png" alt="DN DEV Logo" class="nav-logo-img">
+  <span class="logo-text">DN <span>//</span> DEV</span>
+</a>
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#hero" class="nav-link active">Home</a></li>
@@ -1700,3 +1723,4 @@
   </script>
 </body>
 </html>
+
