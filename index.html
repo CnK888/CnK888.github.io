@@ -14,17 +14,24 @@
 
   <style>
     :root {
-      --bg: #020408;
-      --bg2: #051018;
-      --panel: rgba(5, 16, 24, 0.75);
-      --panel-2: rgba(3, 10, 16, 0.92);
-      --cyan: #00f5ff;
-      --cyan-soft: rgba(0, 245, 255, 0.14);
-      --green: #00ff88;
-      --text: #d7f7ff;
-      --muted: rgba(215, 247, 255, 0.62);
-      --border: rgba(0, 245, 255, 0.18);
-      --shadow: 0 0 25px rgba(0, 245, 255, 0.08);
+      --bg: #070611;
+      --bg2: #0d0b1d;
+      --panel: rgba(12, 10, 28, 0.78);
+      --panel-2: rgba(8, 6, 20, 0.94);
+
+      --cyan: #59f3ff;
+      --cyan-soft: rgba(89, 243, 255, 0.16);
+
+      --blue: #6da8ff;
+      --violet: #8b6cff;
+      --magenta: #d96dff;
+
+      --green: #b06cff;
+      --text: #edf4ff;
+      --muted: rgba(237, 244, 255, 0.68);
+
+      --border: rgba(121, 170, 255, 0.22);
+      --shadow: 0 0 30px rgba(109, 168, 255, 0.14);
       --radius: 22px;
       --maxw: 1240px;
     }
@@ -41,9 +48,10 @@
 
     body {
       background:
-        radial-gradient(circle at top, rgba(0, 245, 255, 0.06), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(0, 255, 136, 0.05), transparent 30%),
-        linear-gradient(180deg, var(--bg) 0%, #02060d 45%, #010308 100%);
+        radial-gradient(circle at top, rgba(89, 243, 255, 0.08), transparent 35%),
+        radial-gradient(circle at right, rgba(217, 109, 255, 0.08), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(109, 168, 255, 0.06), transparent 28%),
+        linear-gradient(180deg, var(--bg) 0%, #090816 45%, #05040d 100%);
       color: var(--text);
       font-family: "Exo 2", sans-serif;
       overflow-x: hidden;
@@ -66,7 +74,7 @@
 
     #matrix-canvas {
       z-index: 0;
-      opacity: 0.2;
+      opacity: 0.18;
       mix-blend-mode: screen;
     }
 
@@ -89,7 +97,7 @@
           transparent 2px,
           transparent 4px
         );
-      opacity: 0.3;
+      opacity: 0.26;
     }
 
     #cur,
@@ -107,16 +115,20 @@
       height: 8px;
       border-radius: 50%;
       background: var(--cyan);
-      box-shadow: 0 0 10px var(--cyan), 0 0 30px var(--cyan);
+      box-shadow:
+        0 0 10px var(--cyan),
+        0 0 20px var(--blue),
+        0 0 34px rgba(217, 109, 255, 0.55);
       transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
     }
 
     #cur-ring {
       width: 34px;
       height: 34px;
-      border: 1px solid rgba(0, 245, 255, 0.65);
+      border: 1px solid rgba(109, 168, 255, 0.75);
       border-radius: 50%;
-      opacity: 0.7;
+      opacity: 0.75;
+      box-shadow: 0 0 18px rgba(139, 108, 255, 0.28);
       transition: transform 0.18s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
     }
 
@@ -140,7 +152,7 @@
       inset: 0 0 auto 0;
       z-index: 100;
       backdrop-filter: blur(14px);
-      background: rgba(2, 4, 8, 0.72);
+      background: rgba(7, 6, 17, 0.74);
       border-bottom: 1px solid var(--border);
     }
 
@@ -160,12 +172,15 @@
       font-weight: 800;
       letter-spacing: 0.18em;
       color: var(--cyan);
-      text-shadow: 0 0 16px rgba(0, 245, 255, 0.35);
+      text-shadow:
+        0 0 10px rgba(89, 243, 255, 0.45),
+        0 0 18px rgba(109, 168, 255, 0.25);
       white-space: nowrap;
     }
 
     .nav-logo span {
-      color: var(--green);
+      color: var(--magenta);
+      text-shadow: 0 0 16px rgba(217, 109, 255, 0.5);
     }
 
     .nav-links {
@@ -187,7 +202,9 @@
     .nav-links a:hover,
     .nav-links a.active {
       color: var(--cyan);
-      text-shadow: 0 0 12px rgba(0, 245, 255, 0.45);
+      text-shadow:
+        0 0 10px rgba(89, 243, 255, 0.5),
+        0 0 18px rgba(139, 108, 255, 0.28);
     }
 
     .nav-status {
@@ -196,7 +213,7 @@
       gap: 10px;
       font-family: "Share Tech Mono", monospace;
       font-size: 0.7rem;
-      color: var(--green);
+      color: var(--magenta);
       letter-spacing: 0.12em;
       white-space: nowrap;
     }
@@ -205,8 +222,8 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 10px var(--green);
+      background: linear-gradient(135deg, var(--cyan), var(--magenta));
+      box-shadow: 0 0 10px var(--magenta);
       animation: pulse 1.5s infinite;
     }
 
@@ -229,7 +246,7 @@
       width: 24px;
       height: 2px;
       border-radius: 999px;
-      background: var(--cyan);
+      background: linear-gradient(90deg, var(--cyan), var(--magenta));
     }
 
     section {
@@ -252,7 +269,7 @@
 
     .section-kicker {
       font-family: "Share Tech Mono", monospace;
-      color: var(--green);
+      color: var(--magenta);
       letter-spacing: 0.24em;
       text-transform: uppercase;
       font-size: 0.7rem;
@@ -266,7 +283,7 @@
       content: "";
       width: 28px;
       height: 1px;
-      background: var(--green);
+      background: linear-gradient(90deg, var(--cyan), var(--magenta));
     }
 
     .section-title {
@@ -280,8 +297,10 @@
     .section-title em {
       font-style: normal;
       color: transparent;
-      -webkit-text-stroke: 1px var(--cyan);
-      text-shadow: 0 0 24px rgba(0, 245, 255, 0.25);
+      -webkit-text-stroke: 1px var(--blue);
+      text-shadow:
+        0 0 18px rgba(109, 168, 255, 0.35),
+        0 0 26px rgba(217, 109, 255, 0.2);
     }
 
     .section-desc {
@@ -303,9 +322,10 @@
     .hero-frame {
       position: absolute;
       inset: 90px 20px 20px 20px;
-      border: 1px solid rgba(0, 245, 255, 0.08);
+      border: 1px solid rgba(109, 168, 255, 0.12);
       border-radius: 28px;
       pointer-events: none;
+      box-shadow: inset 0 0 40px rgba(89, 243, 255, 0.02);
     }
 
     .hero-grid {
@@ -320,7 +340,8 @@
     .card,
     .project-card,
     .contact-card {
-      background: linear-gradient(180deg, rgba(7, 19, 28, 0.88), rgba(4, 10, 16, 0.88));
+      background:
+        linear-gradient(180deg, rgba(14, 11, 30, 0.9), rgba(8, 6, 20, 0.88));
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
       border-radius: var(--radius);
@@ -338,14 +359,14 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(130deg, rgba(0, 245, 255, 0.05), transparent 35%),
-        radial-gradient(circle at 90% 10%, rgba(0, 255, 136, 0.06), transparent 28%);
+        linear-gradient(130deg, rgba(89, 243, 255, 0.08), transparent 35%),
+        radial-gradient(circle at 90% 10%, rgba(217, 109, 255, 0.08), transparent 28%);
       pointer-events: none;
     }
 
     .hero-sys {
       font-family: "Share Tech Mono", monospace;
-      color: var(--green);
+      color: var(--magenta);
       letter-spacing: 0.22em;
       text-transform: uppercase;
       font-size: 0.72rem;
@@ -359,7 +380,7 @@
       content: "";
       width: 34px;
       height: 1px;
-      background: var(--green);
+      background: linear-gradient(90deg, var(--cyan), var(--magenta));
     }
 
     .hero-name {
@@ -375,10 +396,20 @@
       font-weight: 900;
     }
 
+    .hero-name .l1 {
+      background: linear-gradient(90deg, #8fffff 0%, #59f3ff 35%, #6da8ff 75%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 24px rgba(89, 243, 255, 0.16);
+    }
+
     .hero-name .l2 {
-      color: transparent;
-      -webkit-text-stroke: 1px var(--cyan);
-      text-shadow: 0 0 28px rgba(0, 245, 255, 0.18);
+      background: linear-gradient(90deg, #8fd8ff 0%, #8b6cff 55%, #d96dff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow:
+        0 0 18px rgba(109, 168, 255, 0.3),
+        0 0 28px rgba(217, 109, 255, 0.24);
       animation: glitch 6.5s infinite;
     }
 
@@ -399,7 +430,7 @@
     }
 
     .hero-role span {
-      color: var(--green);
+      color: var(--magenta);
     }
 
     .hero-desc {
@@ -438,13 +469,15 @@
     }
 
     .btn-primary {
-      background: linear-gradient(90deg, rgba(0, 245, 255, 0.16), rgba(0, 255, 136, 0.12));
+      background: linear-gradient(90deg, rgba(89, 243, 255, 0.18), rgba(217, 109, 255, 0.16));
       color: var(--text);
-      box-shadow: 0 0 20px rgba(0, 245, 255, 0.12);
+      box-shadow:
+        0 0 18px rgba(89, 243, 255, 0.16),
+        0 0 24px rgba(217, 109, 255, 0.12);
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(255, 255, 255, 0.03);
       color: var(--cyan);
     }
 
@@ -458,7 +491,7 @@
       padding: 18px 18px 16px;
       border-radius: 18px;
       border: 1px solid var(--border);
-      background: rgba(0, 245, 255, 0.03);
+      background: rgba(109, 168, 255, 0.04);
     }
 
     .hud-v {
@@ -467,6 +500,9 @@
       color: var(--cyan);
       margin-bottom: 8px;
       line-height: 1;
+      text-shadow:
+        0 0 12px rgba(89, 243, 255, 0.3),
+        0 0 20px rgba(109, 168, 255, 0.18);
     }
 
     .hud-l {
@@ -496,7 +532,7 @@
       right: 18px;
       font-family: "Share Tech Mono", monospace;
       font-size: 0.66rem;
-      color: rgba(0, 245, 255, 0.35);
+      color: rgba(109, 168, 255, 0.38);
       letter-spacing: 0.16em;
     }
 
@@ -514,9 +550,9 @@
       background: rgba(255,255,255,0.18);
     }
 
-    .term-top span:nth-child(1) { background: #ff5f56; }
-    .term-top span:nth-child(2) { background: #ffbd2e; }
-    .term-top span:nth-child(3) { background: #27c93f; }
+    .term-top span:nth-child(1) { background: #59f3ff; }
+    .term-top span:nth-child(2) { background: #6da8ff; }
+    .term-top span:nth-child(3) { background: #d96dff; }
 
     .tline {
       font-family: "Share Tech Mono", monospace;
@@ -528,7 +564,7 @@
     .k { color: var(--cyan); }
     .op { color: rgba(255,255,255,0.38); margin: 0 6px; }
     .v { color: var(--text); }
-    .ok { color: var(--green); }
+    .ok { color: var(--magenta); }
     .blink {
       display: inline-block;
       animation: blink 1s steps(1) infinite;
@@ -545,7 +581,7 @@
     .mini-title {
       font-family: "Share Tech Mono", monospace;
       font-size: 0.75rem;
-      color: var(--green);
+      color: var(--magenta);
       letter-spacing: 0.14em;
       margin-bottom: 16px;
       text-transform: uppercase;
@@ -560,11 +596,12 @@
     .tag {
       padding: 9px 14px;
       border-radius: 999px;
-      background: rgba(0, 245, 255, 0.05);
-      border: 1px solid rgba(0, 245, 255, 0.13);
+      background: rgba(109, 168, 255, 0.08);
+      border: 1px solid rgba(109, 168, 255, 0.18);
       font-family: "Share Tech Mono", monospace;
       font-size: 0.72rem;
       color: var(--text);
+      box-shadow: inset 0 0 12px rgba(89, 243, 255, 0.03);
     }
 
     .about-grid {
@@ -586,11 +623,11 @@
     .quote {
       margin-top: 24px;
       padding: 18px 20px;
-      border-left: 3px solid var(--cyan);
-      background: rgba(0, 245, 255, 0.04);
+      border-left: 3px solid var(--blue);
+      background: rgba(109, 168, 255, 0.06);
       border-radius: 12px;
       font-family: "Share Tech Mono", monospace;
-      color: rgba(215, 247, 255, 0.78);
+      color: rgba(237, 244, 255, 0.82);
       line-height: 1.8;
       font-size: 0.88rem;
     }
@@ -607,7 +644,7 @@
       padding: 14px 16px;
       border-radius: 16px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.015);
+      background: rgba(255,255,255,0.018);
       font-size: 0.95rem;
     }
 
@@ -637,14 +674,14 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(145deg, rgba(0,245,255,0.04), transparent 45%);
+      background: linear-gradient(145deg, rgba(89,243,255,0.05), transparent 45%);
       pointer-events: none;
     }
 
     .service-no {
       font-family: "Share Tech Mono", monospace;
       font-size: 0.75rem;
-      color: var(--green);
+      color: var(--magenta);
       letter-spacing: 0.14em;
       margin-bottom: 16px;
     }
@@ -673,8 +710,8 @@
     .stag {
       padding: 8px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(0, 245, 255, 0.16);
-      background: rgba(0, 245, 255, 0.04);
+      border: 1px solid rgba(109, 168, 255, 0.2);
+      background: rgba(109, 168, 255, 0.06);
       font-family: "Share Tech Mono", monospace;
       font-size: 0.7rem;
       color: var(--text);
@@ -696,6 +733,7 @@
       margin-bottom: 18px;
       text-transform: uppercase;
       color: var(--cyan);
+      text-shadow: 0 0 10px rgba(89, 243, 255, 0.15);
     }
 
     .skill-tags {
@@ -724,15 +762,15 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(135deg, rgba(0, 245, 255, 0.07), transparent 45%),
-        radial-gradient(circle at bottom right, rgba(0, 255, 136, 0.06), transparent 30%);
+        linear-gradient(135deg, rgba(89, 243, 255, 0.08), transparent 45%),
+        radial-gradient(circle at bottom right, rgba(217, 109, 255, 0.08), transparent 30%);
       pointer-events: none;
     }
 
     .project-type {
       font-family: "Share Tech Mono", monospace;
       font-size: 0.7rem;
-      color: var(--green);
+      color: var(--magenta);
       letter-spacing: 0.12em;
       text-transform: uppercase;
       margin-bottom: 14px;
@@ -765,8 +803,8 @@
       border-radius: 999px;
       font-family: "Share Tech Mono", monospace;
       font-size: 0.68rem;
-      border: 1px solid rgba(0,245,255,0.15);
-      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(109,168,255,0.18);
+      background: rgba(255,255,255,0.03);
     }
 
     .summary-grid {
@@ -785,6 +823,9 @@
       font-size: 2rem;
       color: var(--cyan);
       margin-bottom: 10px;
+      text-shadow:
+        0 0 10px rgba(89, 243, 255, 0.32),
+        0 0 20px rgba(139, 108, 255, 0.14);
     }
 
     .summary-card p {
@@ -896,7 +937,7 @@
         padding: 18px;
         border-radius: 18px;
         border: 1px solid var(--border);
-        background: rgba(2, 4, 8, 0.95);
+        background: rgba(7, 6, 17, 0.96);
         backdrop-filter: blur(16px);
       }
 
@@ -1033,7 +1074,7 @@
             <div class="tline"><span class="k">database</span><span class="op">=</span><span class="v">["PostgreSQL","MySQL","SQL Server"]</span></div>
             <div class="tline"><span class="k">status</span><span class="op">=</span><span class="v ok">"OPEN FOR PROJECTS"</span></div>
             <div class="tline"><span class="k">projects.total</span><span class="op">=</span><span class="v">14</span></div>
-            <div class="tline" style="margin-top: 10px; color: rgba(215,247,255,0.58);">$ full_stack_mode<span class="blink">_</span></div>
+            <div class="tline" style="margin-top: 10px; color: rgba(237,244,255,0.58);">$ full_stack_mode<span class="blink">_</span></div>
           </div>
 
           <div class="hero-panel mini-card">
@@ -1056,7 +1097,6 @@
     </div>
   </section>
 
-  <!-- CORE SERVICES -->
   <section id="services" class="section-pad">
     <div class="container">
       <div class="section-head reveal">
@@ -1119,7 +1159,6 @@
     </div>
   </section>
 
-  <!-- TECH CAPABILITY -->
   <section id="skills" class="section-pad">
     <div class="container">
       <div class="section-head reveal">
@@ -1212,7 +1251,6 @@
     </div>
   </section>
 
-  <!-- FEATURED PORTFOLIO -->
   <section id="projects" class="section-pad">
     <div class="container">
       <div class="section-head reveal">
@@ -1359,7 +1397,6 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO SUMMARY -->
   <section id="summary" class="section-pad">
     <div class="container">
       <div class="section-head reveal">
@@ -1394,7 +1431,6 @@
     </div>
   </section>
 
-  <!-- PROFILE OVERVIEW -->
   <section id="about" class="section-pad">
     <div class="container">
       <div class="section-head reveal">
@@ -1461,7 +1497,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="section-pad">
     <div class="container">
       <div class="section-head reveal">
@@ -1555,7 +1590,7 @@
         cur.style.height = "8px";
         ring.style.width = "34px";
         ring.style.height = "34px";
-        ring.style.opacity = "0.7";
+        ring.style.opacity = "0.75";
       });
     });
 
@@ -1597,14 +1632,21 @@
 
     function drawMatrix() {
       if (!mtx) return;
-      mtx.fillStyle = "rgba(2,4,8,0.12)";
+      mtx.fillStyle = "rgba(7,6,17,0.13)";
       mtx.fillRect(0, 0, matrixW, matrixH);
-      mtx.fillStyle = "rgba(0,255,136,0.7)";
       mtx.font = "14px Share Tech Mono";
 
       for (let i = 0; i < drops.length; i++) {
         const text = matrixChars[Math.floor(Math.random() * matrixChars.length)];
-        mtx.fillText(text, i * 18, drops[i] * 18);
+        const x = i * 18;
+        const y = drops[i] * 18;
+
+        const grad = mtx.createLinearGradient(x, y - 18, x, y + 18);
+        grad.addColorStop(0, "rgba(89,243,255,0.9)");
+        grad.addColorStop(0.5, "rgba(109,168,255,0.82)");
+        grad.addColorStop(1, "rgba(217,109,255,0.72)");
+        mtx.fillStyle = grad;
+        mtx.fillText(text, x, y);
 
         if (drops[i] * 18 > matrixH && Math.random() > 0.975) {
           drops[i] = 0;
@@ -1628,7 +1670,7 @@
       const h = gridCanvas.height;
       gtx.clearRect(0, 0, w, h);
 
-      gtx.strokeStyle = "rgba(0,245,255,0.08)";
+      gtx.strokeStyle = "rgba(109,168,255,0.08)";
       gtx.lineWidth = 1;
 
       const gap = 42;
